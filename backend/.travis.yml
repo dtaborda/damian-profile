@@ -1,0 +1,10 @@
+language: generic
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t dtaborda/damian-profile -f Dockerfile.dev .
+
+script:
+  - docker run -e CI=true dtaborda/damian-profile npm run test

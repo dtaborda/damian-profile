@@ -1,3 +1,4 @@
+import 'dotenv/config';
 import { createAuth } from '@keystone-next/auth';
 import { config, createSchema } from '@keystone-next/keystone/schema';
 import {
@@ -7,7 +8,6 @@ import {
 import { User } from './schemas/User';
 import { Album } from './schemas/Album';
 import { AlbumImage } from './schemas/AlbumImage';
-import 'dotenv/config';
 
 const databaseURL =
   process.env.DATABASE_URL || 'mongodb://localhost/keystone-sick-fits-tutorial';
@@ -49,6 +49,8 @@ export default withAuth(
     ui: {
       // Show the UI only for poeple who pass this test
       isAccessAllowed: ({ session }) => {
+        console.log({ process: process.env });
+        console.log('session !!!');
         console.log(session);
         // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
         return !!session?.data;

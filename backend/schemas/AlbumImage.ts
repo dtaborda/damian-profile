@@ -19,9 +19,4 @@ export const AlbumImage = list({
     altText: text(),
     album: relationship({ ref: 'Album.photo' }),
   },
-  ui: {
-    listView: {
-      initialColumns: ['image'],
-    },
-  },
 });

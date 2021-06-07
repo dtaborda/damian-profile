@@ -33,9 +33,4 @@ export const Album = list({
       },
     }),
   },
-  ui: {
-    listView: {
-      initialColumns: ['name'],
-    },
-  },
 });

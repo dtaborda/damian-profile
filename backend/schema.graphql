@@ -1,0 +1,601 @@
+"""
+ A keystone list
+"""
+type User {
+  id: ID!
+  name: String
+  email: String
+  password_is_set: Boolean
+}
+
+input UserWhereInput {
+  AND: [UserWhereInput]
+  OR: [UserWhereInput]
+  id: ID
+  id_not: ID
+  id_lt: ID
+  id_lte: ID
+  id_gt: ID
+  id_gte: ID
+  id_in: [ID]
+  id_not_in: [ID]
+  name: String
+  name_not: String
+  name_contains: String
+  name_not_contains: String
+  name_starts_with: String
+  name_not_starts_with: String
+  name_ends_with: String
+  name_not_ends_with: String
+  name_i: String
+  name_not_i: String
+  name_contains_i: String
+  name_not_contains_i: String
+  name_starts_with_i: String
+  name_not_starts_with_i: String
+  name_ends_with_i: String
+  name_not_ends_with_i: String
+  name_in: [String]
+  name_not_in: [String]
+  email: String
+  email_not: String
+  email_contains: String
+  email_not_contains: String
+  email_starts_with: String
+  email_not_starts_with: String
+  email_ends_with: String
+  email_not_ends_with: String
+  email_i: String
+  email_not_i: String
+  email_contains_i: String
+  email_not_contains_i: String
+  email_starts_with_i: String
+  email_not_starts_with_i: String
+  email_ends_with_i: String
+  email_not_ends_with_i: String
+  email_in: [String]
+  email_not_in: [String]
+  password_is_set: Boolean
+}
+
+input UserWhereUniqueInput {
+  id: ID!
+}
+
+enum SortUsersBy {
+  id_ASC
+  id_DESC
+  name_ASC
+  name_DESC
+  email_ASC
+  email_DESC
+}
+
+input UserUpdateInput {
+  name: String
+  email: String
+  password: String
+}
+
+input UsersUpdateInput {
+  id: ID!
+  data: UserUpdateInput
+}
+
+input UserCreateInput {
+  name: String
+  email: String
+  password: String
+}
+
+input UsersCreateInput {
+  data: UserCreateInput
+}
+
+input AlbumImageRelateToOneInput {
+  create: AlbumImageCreateInput
+  connect: AlbumImageWhereUniqueInput
+  disconnect: AlbumImageWhereUniqueInput
+  disconnectAll: Boolean
+}
+
+"""
+ A keystone list
+"""
+type Album {
+  id: ID!
+  name: String
+  description: String
+  photo: AlbumImage
+  status: String
+}
+
+input AlbumWhereInput {
+  AND: [AlbumWhereInput]
+  OR: [AlbumWhereInput]
+  id: ID
+  id_not: ID
+  id_lt: ID
+  id_lte: ID
+  id_gt: ID
+  id_gte: ID
+  id_in: [ID]
+  id_not_in: [ID]
+  name: String
+  name_not: String
+  name_contains: String
+  name_not_contains: String
+  name_starts_with: String
+  name_not_starts_with: String
+  name_ends_with: String
+  name_not_ends_with: String
+  name_i: String
+  name_not_i: String
+  name_contains_i: String
+  name_not_contains_i: String
+  name_starts_with_i: String
+  name_not_starts_with_i: String
+  name_ends_with_i: String
+  name_not_ends_with_i: String
+  name_in: [String]
+  name_not_in: [String]
+  description: String
+  description_not: String
+  description_contains: String
+  description_not_contains: String
+  description_starts_with: String
+  description_not_starts_with: String
+  description_ends_with: String
+  description_not_ends_with: String
+  description_i: String
+  description_not_i: String
+  description_contains_i: String
+  description_not_contains_i: String
+  description_starts_with_i: String
+  description_not_starts_with_i: String
+  description_ends_with_i: String
+  description_not_ends_with_i: String
+  description_in: [String]
+  description_not_in: [String]
+  photo: AlbumImageWhereInput
+  photo_is_null: Boolean
+  status: String
+  status_not: String
+  status_in: [String]
+  status_not_in: [String]
+}
+
+input AlbumWhereUniqueInput {
+  id: ID!
+}
+
+enum SortAlbumsBy {
+  id_ASC
+  id_DESC
+  name_ASC
+  name_DESC
+  description_ASC
+  description_DESC
+  status_ASC
+  status_DESC
+}
+
+input AlbumUpdateInput {
+  name: String
+  description: String
+  photo: AlbumImageRelateToOneInput
+  status: String
+}
+
+input AlbumsUpdateInput {
+  id: ID!
+  data: AlbumUpdateInput
+}
+
+input AlbumCreateInput {
+  name: String
+  description: String
+  photo: AlbumImageRelateToOneInput
+  status: String
+}
+
+input AlbumsCreateInput {
+  data: AlbumCreateInput
+}
+
+input AlbumRelateToOneInput {
+  create: AlbumCreateInput
+  connect: AlbumWhereUniqueInput
+  disconnect: AlbumWhereUniqueInput
+  disconnectAll: Boolean
+}
+
+"""
+ A keystone list
+"""
+type AlbumImage {
+  id: ID!
+  altText: String
+  album: Album
+}
+
+input AlbumImageWhereInput {
+  AND: [AlbumImageWhereInput]
+  OR: [AlbumImageWhereInput]
+  id: ID
+  id_not: ID
+  id_lt: ID
+  id_lte: ID
+  id_gt: ID
+  id_gte: ID
+  id_in: [ID]
+  id_not_in: [ID]
+  altText: String
+  altText_not: String
+  altText_contains: String
+  altText_not_contains: String
+  altText_starts_with: String
+  altText_not_starts_with: String
+  altText_ends_with: String
+  altText_not_ends_with: String
+  altText_i: String
+  altText_not_i: String
+  altText_contains_i: String
+  altText_not_contains_i: String
+  altText_starts_with_i: String
+  altText_not_starts_with_i: String
+  altText_ends_with_i: String
+  altText_not_ends_with_i: String
+  altText_in: [String]
+  altText_not_in: [String]
+  album: AlbumWhereInput
+  album_is_null: Boolean
+}
+
+input AlbumImageWhereUniqueInput {
+  id: ID!
+}
+
+enum SortAlbumImagesBy {
+  id_ASC
+  id_DESC
+  altText_ASC
+  altText_DESC
+}
+
+input AlbumImageUpdateInput {
+  altText: String
+  album: AlbumRelateToOneInput
+}
+
+input AlbumImagesUpdateInput {
+  id: ID!
+  data: AlbumImageUpdateInput
+}
+
+input AlbumImageCreateInput {
+  altText: String
+  album: AlbumRelateToOneInput
+}
+
+input AlbumImagesCreateInput {
+  data: AlbumImageCreateInput
+}
+
+"""
+The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+"""
+scalar JSON
+  @specifiedBy(
+    url: "http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf"
+  )
+
+type _QueryMeta {
+  count: Int
+}
+
+type Mutation {
+  """
+   Create a single User item.
+  """
+  createUser(data: UserCreateInput): User
+
+  """
+   Create multiple User items.
+  """
+  createUsers(data: [UsersCreateInput]): [User]
+
+  """
+   Update a single User item by ID.
+  """
+  updateUser(id: ID!, data: UserUpdateInput): User
+
+  """
+   Update multiple User items by ID.
+  """
+  updateUsers(data: [UsersUpdateInput]): [User]
+
+  """
+   Delete a single User item by ID.
+  """
+  deleteUser(id: ID!): User
+
+  """
+   Delete multiple User items by ID.
+  """
+  deleteUsers(ids: [ID!]): [User]
+
+  """
+   Create a single Album item.
+  """
+  createAlbum(data: AlbumCreateInput): Album
+
+  """
+   Create multiple Album items.
+  """
+  createAlbums(data: [AlbumsCreateInput]): [Album]
+
+  """
+   Update a single Album item by ID.
+  """
+  updateAlbum(id: ID!, data: AlbumUpdateInput): Album
+
+  """
+   Update multiple Album items by ID.
+  """
+  updateAlbums(data: [AlbumsUpdateInput]): [Album]
+
+  """
+   Delete a single Album item by ID.
+  """
+  deleteAlbum(id: ID!): Album
+
+  """
+   Delete multiple Album items by ID.
+  """
+  deleteAlbums(ids: [ID!]): [Album]
+
+  """
+   Create a single AlbumImage item.
+  """
+  createAlbumImage(data: AlbumImageCreateInput): AlbumImage
+
+  """
+   Create multiple AlbumImage items.
+  """
+  createAlbumImages(data: [AlbumImagesCreateInput]): [AlbumImage]
+
+  """
+   Update a single AlbumImage item by ID.
+  """
+  updateAlbumImage(id: ID!, data: AlbumImageUpdateInput): AlbumImage
+
+  """
+   Update multiple AlbumImage items by ID.
+  """
+  updateAlbumImages(data: [AlbumImagesUpdateInput]): [AlbumImage]
+
+  """
+   Delete a single AlbumImage item by ID.
+  """
+  deleteAlbumImage(id: ID!): AlbumImage
+
+  """
+   Delete multiple AlbumImage items by ID.
+  """
+  deleteAlbumImages(ids: [ID!]): [AlbumImage]
+  authenticateUserWithPassword(
+    email: String!
+    password: String!
+  ): UserAuthenticationWithPasswordResult!
+  createInitialUser(
+    data: CreateInitialUserInput!
+  ): UserAuthenticationWithPasswordSuccess!
+  endSession: Boolean!
+}
+
+"""
+The `Upload` scalar type represents a file upload.
+"""
+scalar Upload
+
+union AuthenticatedItem = User
+
+union UserAuthenticationWithPasswordResult =
+    UserAuthenticationWithPasswordSuccess
+  | UserAuthenticationWithPasswordFailure
+
+type UserAuthenticationWithPasswordSuccess {
+  sessionToken: String!
+  item: User!
+}
+
+type UserAuthenticationWithPasswordFailure {
+  code: PasswordAuthErrorCode!
+  message: String!
+}
+
+enum PasswordAuthErrorCode {
+  FAILURE
+  IDENTITY_NOT_FOUND
+  SECRET_NOT_SET
+  MULTIPLE_IDENTITY_MATCHES
+  SECRET_MISMATCH
+}
+
+input CreateInitialUserInput {
+  name: String
+  email: String
+  password: String
+}
+
+type Query {
+  """
+   Search for all User items which match the where clause.
+  """
+  allUsers(
+    where: UserWhereInput
+    search: String
+    sortBy: [SortUsersBy!]
+    orderBy: String
+    first: Int
+    skip: Int
+  ): [User]
+
+  """
+   Search for the User item with the matching ID.
+  """
+  User(where: UserWhereUniqueInput!): User
+
+  """
+   Perform a meta-query on all User items which match the where clause.
+  """
+  _allUsersMeta(
+    where: UserWhereInput
+    search: String
+    sortBy: [SortUsersBy!]
+    orderBy: String
+    first: Int
+    skip: Int
+  ): _QueryMeta
+
+  """
+   Search for all Album items which match the where clause.
+  """
+  allAlbums(
+    where: AlbumWhereInput
+    search: String
+    sortBy: [SortAlbumsBy!]
+    orderBy: String
+    first: Int
+    skip: Int
+  ): [Album]
+
+  """
+   Search for the Album item with the matching ID.
+  """
+  Album(where: AlbumWhereUniqueInput!): Album
+
+  """
+   Perform a meta-query on all Album items which match the where clause.
+  """
+  _allAlbumsMeta(
+    where: AlbumWhereInput
+    search: String
+    sortBy: [SortAlbumsBy!]
+    orderBy: String
+    first: Int
+    skip: Int
+  ): _QueryMeta
+
+  """
+   Search for all AlbumImage items which match the where clause.
+  """
+  allAlbumImages(
+    where: AlbumImageWhereInput
+    search: String
+    sortBy: [SortAlbumImagesBy!]
+    orderBy: String
+    first: Int
+    skip: Int
+  ): [AlbumImage]
+
+  """
+   Search for the AlbumImage item with the matching ID.
+  """
+  AlbumImage(where: AlbumImageWhereUniqueInput!): AlbumImage
+
+  """
+   Perform a meta-query on all AlbumImage items which match the where clause.
+  """
+  _allAlbumImagesMeta(
+    where: AlbumImageWhereInput
+    search: String
+    sortBy: [SortAlbumImagesBy!]
+    orderBy: String
+    first: Int
+    skip: Int
+  ): _QueryMeta
+  authenticatedItem: AuthenticatedItem
+  keystone: KeystoneMeta!
+}
+
+type KeystoneMeta {
+  adminMeta: KeystoneAdminMeta!
+}
+
+type KeystoneAdminMeta {
+  enableSignout: Boolean!
+  enableSessionItem: Boolean!
+  lists: [KeystoneAdminUIListMeta!]!
+  list(key: String!): KeystoneAdminUIListMeta
+}
+
+type KeystoneAdminUIListMeta {
+  key: String!
+  itemQueryName: String!
+  listQueryName: String!
+  hideCreate: Boolean!
+  hideDelete: Boolean!
+  path: String!
+  label: String!
+  singular: String!
+  plural: String!
+  description: String
+  initialColumns: [String!]!
+  pageSize: Int!
+  labelField: String!
+  fields: [KeystoneAdminUIFieldMeta!]!
+  initialSort: KeystoneAdminUISort
+  isHidden: Boolean!
+}
+
+type KeystoneAdminUIFieldMeta {
+  path: String!
+  label: String!
+  isOrderable: Boolean!
+  fieldMeta: JSON
+  viewsIndex: Int!
+  customViewsIndex: Int
+  createView: KeystoneAdminUIFieldMetaCreateView!
+  listView: KeystoneAdminUIFieldMetaListView!
+  itemView(id: ID!): KeystoneAdminUIFieldMetaItemView
+}
+
+type KeystoneAdminUIFieldMetaCreateView {
+  fieldMode: KeystoneAdminUIFieldMetaCreateViewFieldMode!
+}
+
+enum KeystoneAdminUIFieldMetaCreateViewFieldMode {
+  edit
+  hidden
+}
+
+type KeystoneAdminUIFieldMetaListView {
+  fieldMode: KeystoneAdminUIFieldMetaListViewFieldMode!
+}
+
+enum KeystoneAdminUIFieldMetaListViewFieldMode {
+  read
+  hidden
+}
+
+type KeystoneAdminUIFieldMetaItemView {
+  fieldMode: KeystoneAdminUIFieldMetaItemViewFieldMode!
+}
+
+enum KeystoneAdminUIFieldMetaItemViewFieldMode {
+  edit
+  read
+  hidden
+}
+
+type KeystoneAdminUISort {
+  field: String!
+  direction: KeystoneAdminUISortDirection!
+}
+
+enum KeystoneAdminUISortDirection {
+  ASC
+  DESC
+}

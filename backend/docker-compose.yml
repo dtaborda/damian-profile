@@ -1,0 +1,23 @@
+version: '3'
+services: 
+  server:
+    build:
+      dockerfile: Dockerfile.dev
+      context: .
+    ports: 
+      - '3000:3000'
+    volumes: 
+      - /app/node_modules
+      - .:/app
+    environment:
+      - CLOUDINARY_CLOUD_NAME="damianpictures"
+      - CLOUDINARY_KEY=589631323857375
+      - CLOUDINARY_SECRET="yeq74WL7kvoDlFzPbLLEpmh5Ryo"
+      - COOKIE_SECRET="littera;a;; amnytohmg;; boca junior champion"
+      - DATABASE_URL=mongodb+srv://damian:DamTab852!@damiancluster.trlle.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+      - STRIPE_SECRET="sk_test_nahhhh"
+      - MAIL_HOST="smtp.ethereal.email"
+      - MAIL_PORT=587
+      - MAIL_USER="get-one-from- http://ethereal.email"
+      - MAIL_PASS="get-one-from- http://ethereal.email"
+      - FRONTEND_URL="http://localhost:7777"
